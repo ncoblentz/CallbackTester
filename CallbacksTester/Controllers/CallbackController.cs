@@ -93,7 +93,7 @@ namespace CallbacksTester.Controllers
         {
             await LogHelper.LogRequest(Request, _logger);
             string customresponse = System.IO.File.ReadAllText("CustomResponse.json");            
-            ControllerContext.HttpContext.Response.StatusCode = _code.GetValueOrDefault();
+            //ControllerContext.HttpContext.Response.StatusCode = _code.GetValueOrDefault();
             Response.ContentType = "application/json";
             return Content(customresponse);
         }
