@@ -5,7 +5,7 @@ What does it do?
 * Provides prewired custom http responses/codes
 
 How does it work?
-1. `dotnet run``
+1. `dotnet run`
 2. Visit http://localhost:5000/api/Callback/200OK
 2. Visit http://localhost:5000/api/Callback/Unauthorized403
 2. Visit http://localhost:5000/api/Callback/Unauthorized401
