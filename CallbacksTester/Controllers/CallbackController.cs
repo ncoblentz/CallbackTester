@@ -72,6 +72,33 @@ namespace CallbacksTester.Controllers
             return Unauthorized();
         }
 
+        [Route("UnauthorizedBasicAuth")]    
+        public async Task<ActionResult> UnauthorizedBasicAuth()
+        {
+            await LogHelper.LogRequest(Request, _logger);            
+            Response.Headers.Add("WWW-Authenticate", "Basic realm=\"MyRealm\"");            
+            return Unauthorized();
+            
+        }
+
+        [Route("UnauthorizedNTLMAuth")]
+        public async Task<ActionResult> UnauthorizedNTLMAuth()
+        {
+            await LogHelper.LogRequest(Request, _logger);
+            Response.Headers.Add("WWW-Authenticate", "NTLM");            
+            return Unauthorized();
+
+        }
+
+        [Route("UnauthorizedNegotiateNTLMAuth")]
+        public async Task<ActionResult> UnauthorizedNegotiateNTLMAuth()
+        {
+            await LogHelper.LogRequest(Request, _logger);
+            Response.Headers.Add("WWW-Authenticate", "Negotiate, NTLM");            
+            return Unauthorized();
+
+        }
+
         [Route("Unauthorized403")]
         public async Task<ActionResult> Unauthorized403()
         {
