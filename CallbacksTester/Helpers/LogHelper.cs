@@ -36,6 +36,7 @@ namespace CallbacksTester.Helpers
                     resultByteArray = result.Buffer.ToArray();
                     builder.Append($"\n{Encoding.UTF8.GetString(resultByteArray)}\n");
                 }
+                Request.BodyReader.AdvanceTo(result.Buffer.End);
                 
             }
             Logger.LogInformation(builder.ToString());
