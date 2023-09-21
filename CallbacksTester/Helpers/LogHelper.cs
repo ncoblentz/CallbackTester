@@ -26,11 +26,20 @@ namespace CallbacksTester.Helpers
             }
             if(Request.Body!=null)
             {
-                ReadResult result = await Request.BodyReader.ReadAsync();
+                ReadResult result= await Request.BodyReader.ReadAsync();
                 byte[] resultByteArray = result.Buffer.ToArray();
                 builder.Append($"\n{Encoding.UTF8.GetString(resultByteArray)}\n");
+
+                while (!result.IsCompleted)
+                {
+                    result = await Request.BodyReader.ReadAsync();
+                    resultByteArray = result.Buffer.ToArray();
+                    builder.Append($"\n{Encoding.UTF8.GetString(resultByteArray)}\n");
+                }
+                
             }
             Logger.LogInformation(builder.ToString());
-        }
+        }      
+        
     }
 }

@@ -5,7 +5,7 @@ What does it do?
 * Provides prewired custom http responses/codes
 
 How does it work?
-1. dotnet run
+1. `dotnet run``
 2. Visit http://localhost:5000/api/Callback/200OK
 2. Visit http://localhost:5000/api/Callback/Unauthorized403
 2. Visit http://localhost:5000/api/Callback/Unauthorized401
@@ -18,4 +18,4 @@ How does it work?
 9. Visit http://localhost:5000/api/Callback/CustomResponseXML (edit file `CustomResponse.xml`)
 9. Visit http://localhost:5000/api/Callback/CustomResponseHTML (edit file `CustomResponse.html`)
 11. Visit http://localhost:5000/api/Callback/VariableStatusCode?_code=401
-12. Edit the CallbackController to make it do something else
+12. Edit the `CallbackController` to make it do something else

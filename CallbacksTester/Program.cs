@@ -20,7 +20,7 @@ namespace CallbacksTester
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {                    
-                    webBuilder.UseStartup<Startup>().UseUrls("http://*:5000", "https://*:5001","http://0.0.0.0:5000", "https://0.0.0.0:5001");                    
+                    webBuilder.UseStartup<Startup>().UseUrls("http://*:5000", "https://*:5001");                    
                 });
     }
 }
