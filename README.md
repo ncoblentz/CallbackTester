@@ -1,5 +1,7 @@
 # Callbacks Tester
 
+__Deprecated in favor of: https://github.com/ncoblentz/PentestWebhooksServer__
+
 What does it do?
 * Logs requests to the console
 * Provides prewired custom http responses/codes
